@@ -1,0 +1,9 @@
+function dydt = Kepler(~,SV)
+
+mu = 3.986004418e14; % m3/c2
+
+dydt = [SV(4), SV(5), SV(6),...
+        -mu * SV(1) / sqrt( SV(1)^2 + SV(2)^2 + SV(3)^2 ) ^ 3,...
+        -mu * SV(2) / sqrt( SV(1)^2 + SV(2)^2 + SV(3)^2 ) ^ 3,...
+        -mu * SV(3) / sqrt( SV(1)^2 + SV(2)^2 + SV(3)^2 ) ^ 3]';
+ 
